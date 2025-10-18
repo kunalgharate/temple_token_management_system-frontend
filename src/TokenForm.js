@@ -19,6 +19,14 @@ const TokenForm = () => {
         throw new Error('Token not found');
       }
       const data = await response.json();
+      
+      // Check if passengers are already filled
+      if (data.passengers && data.passengers.length > 0) {
+        setTokenData({ ...data, alreadyFilled: true });
+        setLoading(false);
+        return;
+      }
+      
       setTokenData(data);
       setPassengers(Array(data.passenger_count).fill().map(() => ({
         name: '',
@@ -76,6 +84,24 @@ const TokenForm = () => {
 
   if (loading) return <div className="loading">Loading token details...</div>;
   if (tokenData?.error) return <div className="error">Token not found</div>;
+  if (tokenData?.alreadyFilled) {
+    return (
+      <div className="container">
+        <div className="header">
+          <h1>Temple Darshan</h1>
+          <p>Token: {tokenNumber}</p>
+          <p>Vehicle: {tokenData.vehicle_number}</p>
+        </div>
+        <div className="form-container">
+          <div style={{textAlign: 'center', padding: '40px'}}>
+            <h2>✅ Details Already Submitted</h2>
+            <p>Passenger details have already been submitted for this token.</p>
+            <p>You can now close this window.</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container">
