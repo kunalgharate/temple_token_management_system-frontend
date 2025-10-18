@@ -313,7 +313,19 @@
                     throw new Error(data.error || 'Failed to submit passenger details');
                 }
                 
-                showSuccess('Passenger details submitted successfully! You can now proceed to the temple queue.');
+                // Show thank you dialog
+                alert('Thank you for submitting your details!');
+                
+                // Clear the form
+                const passengerCount = parseInt(document.getElementById('passenger-count').textContent);
+                for (let i = 1; i <= passengerCount; i++) {
+                    document.getElementById(`name-${i}`).value = '';
+                    document.getElementById(`phone-${i}`).value = '';
+                    document.getElementById(`city-${i}`).value = '';
+                }
+                
+                // Show success message and close instruction
+                showSuccess('Details submitted successfully! You can now close this window.');
                 document.getElementById('passenger-form').style.display = 'none';
                 
             } catch (error) {
