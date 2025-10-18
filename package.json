@@ -14,7 +14,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://temple-token-management-system-frontend.onrender.com",
+  "homepage": ".",
   "devDependencies": {
   },
   "browserslist": {
