@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Darshan - Test Form</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        .passenger-section { margin-bottom: 20px; padding: 15px; border: 1px solid #eee; border-radius: 5px; }
+        .submit-btn { width: 100%; padding: 15px; background: #ff6b35; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Temple Darshan - Passenger Details</h1>
+        
+        <div class="token-info">
+            <h3>Token: T-20251018-534</h3>
+            <p>Vehicle: MH12AB1234</p>
+            <p>Total Passengers: 2</p>
+        </div>
+        
+        <form id="passenger-form">
+            <div class="passenger-section">
+                <h4>Passenger 1</h4>
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" required>
+                </div>
+                <div class="form-group">
+                    <label>City *</label>
+                    <input type="text" required>
+                </div>
+            </div>
+            
+            <div class="passenger-section">
+                <h4>Passenger 2</h4>
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" required>
+                </div>
+                <div class="form-group">
+                    <label>City *</label>
+                    <input type="text" required>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit Passenger Details</button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('passenger-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Form submitted! (This is just a test)');
+        });
+    </script>
+</body>
+</html>

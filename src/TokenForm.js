@@ -55,7 +55,18 @@ const TokenForm = () => {
         throw new Error(error.error || 'Failed to submit');
       }
       
-      alert('Details submitted successfully!');
+      // Show thank you dialog
+      alert('Thank you for submitting your details!');
+      
+      // Clear the form
+      setPassengers(Array(tokenData.passenger_count).fill().map(() => ({
+        name: '',
+        phone: '',
+        city: ''
+      })));
+      
+      // Show success message
+      alert('Details submitted successfully! You can now close this window.');
     } catch (error) {
       alert(`Error: ${error.message}`);
     } finally {
