@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/passenger-web/static/css/main.b5c83b20.css",
-    "main.js": "/passenger-web/static/js/main.a2bf5a85.js",
-    "index.html": "/passenger-web/index.html",
-    "main.b5c83b20.css.map": "/passenger-web/static/css/main.b5c83b20.css.map",
-    "main.a2bf5a85.js.map": "/passenger-web/static/js/main.a2bf5a85.js.map"
+    "main.css": "/temple_token_management_system-frontend/static/css/main.b5c83b20.css",
+    "main.js": "/temple_token_management_system-frontend/static/js/main.a2bf5a85.js",
+    "index.html": "/temple_token_management_system-frontend/index.html",
+    "main.b5c83b20.css.map": "/temple_token_management_system-frontend/static/css/main.b5c83b20.css.map",
+    "main.a2bf5a85.js.map": "/temple_token_management_system-frontend/static/js/main.a2bf5a85.js.map"
   },
   "entrypoints": [
     "static/css/main.b5c83b20.css",
