@@ -6,7 +6,7 @@ const TokenForm = () => {
   const [tokenData, setTokenData] = useState(null);
   const [passengers, setPassengers] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     fetchTokenData();
@@ -15,12 +15,10 @@ const TokenForm = () => {
   const fetchTokenData = async () => {
     try {
       const response = await fetch(`https://temple-token-management-system.onrender.com/api/tokens/${tokenNumber}`);
-      if (!response.ok) {
-        throw new Error('Token not found');
-      }
+      if (!response.ok) throw new Error('Token not found');
+      
       const data = await response.json();
       
-      // Check if passengers are already filled
       if (data.passengers && data.passengers.length > 0) {
         setTokenData({ ...data, alreadyFilled: true });
         setLoading(false);
@@ -29,16 +27,12 @@ const TokenForm = () => {
       
       setTokenData(data);
       setPassengers(Array(data.passenger_count).fill().map(() => ({
-        name: '',
-        phone: '',
-        city: ''
+        name: '', phone: '', city: ''
       })));
     } catch (error) {
-      console.error('Error fetching token data:', error);
       setTokenData({ error: 'Token not found' });
-    } finally {
-      setLoading(false);
     }
+    setLoading(false);
   };
 
   const handlePassengerChange = (index, field, value) => {
@@ -47,10 +41,8 @@ const TokenForm = () => {
     setPassengers(updated);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSubmitting(true);
-    
+  const submitDetails = async () => {
+    setLoading(true);
     try {
       const response = await fetch(`https://temple-token-management-system.onrender.com/api/tokens/${tokenNumber}/passengers`, {
         method: 'POST',
@@ -58,46 +50,35 @@ const TokenForm = () => {
         body: JSON.stringify({ passengers })
       });
       
-      if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.error || 'Failed to submit');
-      }
-      
-      // Show thank you dialog
-      alert('Thank you for submitting your details!');
-      
-      // Clear the form
-      setPassengers(Array(tokenData.passenger_count).fill().map(() => ({
-        name: '',
-        phone: '',
-        city: ''
-      })));
-      
-      // Show success message
-      alert('Details submitted successfully! You can now close this window.');
+      if (!response.ok) throw new Error('Failed to submit');
+      setSubmitted(true);
     } catch (error) {
-      alert(`Error: ${error.message}`);
-    } finally {
-      setSubmitting(false);
+      alert('Error submitting details');
     }
+    setLoading(false);
   };
 
-  if (loading) return <div className="loading">Loading token details...</div>;
-  if (tokenData?.error) return <div className="error">Token not found</div>;
+  if (loading) return <div className="container">Loading...</div>;
+  if (tokenData?.error) return <div className="container">Token not found</div>;
+  
+  if (submitted) {
+    return (
+      <div className="container">
+        <h1>✅ Thank You!</h1>
+        <p>Your details have been submitted successfully.</p>
+      </div>
+    );
+  }
+
   if (tokenData?.alreadyFilled) {
     return (
       <div className="container">
-        <div className="header">
-          <h1>Temple Darshan</h1>
-          <p>Token: {tokenNumber}</p>
-          <p>Vehicle: {tokenData.vehicle_number}</p>
-        </div>
-        <div className="form-container">
-          <div style={{textAlign: 'center', padding: '40px'}}>
-            <h2>✅ Details Already Submitted</h2>
-            <p>Passenger details have already been submitted for this token.</p>
-            <p>You can now close this window.</p>
-          </div>
+        <h1>Temple Darshan</h1>
+        <p>Token: {tokenNumber}</p>
+        <p>Vehicle: {tokenData.vehicle_number}</p>
+        <div className="already-filled">
+          <h2>✅ Details Already Submitted</h2>
+          <p>Passenger details have already been submitted for this token.</p>
         </div>
       </div>
     );
@@ -105,14 +86,12 @@ const TokenForm = () => {
 
   return (
     <div className="container">
-      <div className="header">
-        <h1>Temple Darshan</h1>
-        <p>Token: {tokenNumber}</p>
+      <h1>Temple Darshan</h1>
+      <div className="form-section">
+        <h2>Token: {tokenData.token_number}</h2>
         <p>Vehicle: {tokenData.vehicle_number}</p>
         <p>Visitors: {tokenData.passenger_count}</p>
-      </div>
-      
-      <form onSubmit={handleSubmit} className="form-container">
+        
         {passengers.map((passenger, index) => (
           <div key={index} className="passenger-form">
             <h3>Visitor {index + 1}</h3>
@@ -139,10 +118,11 @@ const TokenForm = () => {
             />
           </div>
         ))}
-        <button type="submit" className="submit-btn" disabled={submitting}>
-          {submitting ? 'Submitting...' : 'Submit Details'}
+        
+        <button onClick={submitDetails} disabled={loading} className="submit-btn">
+          {loading ? 'Submitting...' : 'Submit Details'}
         </button>
-      </form>
+      </div>
     </div>
   );
 };
