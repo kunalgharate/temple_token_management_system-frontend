@@ -67,3 +67,12 @@
   width: 100%;
   margin-top: 20px;
 }
+
+.already-filled {
+  text-align: center;
+  padding: 40px;
+  background: #e8f5e8;
+  border: 1px solid #4caf50;
+  border-radius: 8px;
+  margin-top: 20px;
+}

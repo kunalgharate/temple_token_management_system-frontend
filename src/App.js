@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
@@ -8,15 +8,34 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const fetchToken = async () => {
-    if (!tokenNumber.trim()) return;
+  useEffect(() => {
+    // Check URL for token parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const tokenFromUrl = urlParams.get('token');
+    
+    if (tokenFromUrl) {
+      setTokenNumber(tokenFromUrl);
+      fetchTokenData(tokenFromUrl);
+    }
+  }, []);
+
+  const fetchTokenData = async (token = tokenNumber) => {
+    if (!token.trim()) return;
     
     setLoading(true);
     try {
-      const response = await fetch(`https://temple-token-management-system.onrender.com/api/tokens/${tokenNumber}`);
+      const response = await fetch(`https://temple-token-management-system.onrender.com/api/tokens/${token}`);
       if (!response.ok) throw new Error('Token not found');
       
       const data = await response.json();
+      
+      // Check if already filled
+      if (data.passengers && data.passengers.length > 0) {
+        setTokenData({ ...data, alreadyFilled: true });
+        setLoading(false);
+        return;
+      }
+      
       setTokenData(data);
       setPassengers(Array(data.passenger_count).fill().map(() => ({
         name: '', phone: '', city: ''
@@ -53,9 +72,23 @@ function App() {
   if (submitted) {
     return (
       <div className="container">
-        <h1>Thank You!</h1>
+        <h1>✅ Thank You!</h1>
         <p>Your details have been submitted successfully.</p>
-        <button onClick={() => window.location.reload()}>Submit Another Token</button>
+        <p>You can now close this window.</p>
+      </div>
+    );
+  }
+
+  if (tokenData?.alreadyFilled) {
+    return (
+      <div className="container">
+        <h1>Temple Darshan</h1>
+        <p>Token: {tokenNumber}</p>
+        <p>Vehicle: {tokenData.vehicle_number}</p>
+        <div className="already-filled">
+          <h2>✅ Details Already Submitted</h2>
+          <p>Passenger details have already been submitted for this token.</p>
+        </div>
       </div>
     );
   }
@@ -64,19 +97,21 @@ function App() {
     <div className="container">
       <h1>Temple Token Management</h1>
       
-      <div className="token-input">
-        <input
-          type="text"
-          placeholder="Enter Token Number"
-          value={tokenNumber}
-          onChange={(e) => setTokenNumber(e.target.value)}
-        />
-        <button onClick={fetchToken} disabled={loading}>
-          {loading ? 'Loading...' : 'Get Token'}
-        </button>
-      </div>
+      {!tokenData && (
+        <div className="token-input">
+          <input
+            type="text"
+            placeholder="Enter Token Number"
+            value={tokenNumber}
+            onChange={(e) => setTokenNumber(e.target.value)}
+          />
+          <button onClick={() => fetchTokenData()} disabled={loading}>
+            {loading ? 'Loading...' : 'Get Token'}
+          </button>
+        </div>
+      )}
 
-      {tokenData && (
+      {tokenData && !tokenData.alreadyFilled && (
         <div className="form-section">
           <h2>Token: {tokenData.token_number}</h2>
           <p>Vehicle: {tokenData.vehicle_number}</p>
@@ -90,18 +125,21 @@ function App() {
                 placeholder="Full Name"
                 value={passenger.name}
                 onChange={(e) => handlePassengerChange(index, 'name', e.target.value)}
+                required
               />
               <input
                 type="tel"
                 placeholder="Phone Number"
                 value={passenger.phone}
                 onChange={(e) => handlePassengerChange(index, 'phone', e.target.value)}
+                required
               />
               <input
                 type="text"
                 placeholder="City"
                 value={passenger.city}
                 onChange={(e) => handlePassengerChange(index, 'city', e.target.value)}
+                required
               />
             </div>
           ))}
