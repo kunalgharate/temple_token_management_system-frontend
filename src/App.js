@@ -9,11 +9,10 @@ function App() {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    // Check URL for token parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    const tokenFromUrl = urlParams.get('token');
-    
-    if (tokenFromUrl) {
+    // Check URL hash for token parameter
+    const hash = window.location.hash;
+    if (hash.startsWith('#token=')) {
+      const tokenFromUrl = hash.replace('#token=', '');
       setTokenNumber(tokenFromUrl);
       fetchTokenData(tokenFromUrl);
     }
