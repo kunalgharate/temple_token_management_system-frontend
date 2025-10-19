@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/temple_token_management_system-frontend/static/css/main.b5c83b20.css",
-    "main.js": "/temple_token_management_system-frontend/static/js/main.a2bf5a85.js",
+    "main.js": "/temple_token_management_system-frontend/static/js/main.02f23ba5.js",
     "index.html": "/temple_token_management_system-frontend/index.html",
     "main.b5c83b20.css.map": "/temple_token_management_system-frontend/static/css/main.b5c83b20.css.map",
-    "main.a2bf5a85.js.map": "/temple_token_management_system-frontend/static/js/main.a2bf5a85.js.map"
+    "main.02f23ba5.js.map": "/temple_token_management_system-frontend/static/js/main.02f23ba5.js.map"
   },
   "entrypoints": [
     "static/css/main.b5c83b20.css",
-    "static/js/main.a2bf5a85.js"
+    "static/js/main.02f23ba5.js"
   ]
 }
