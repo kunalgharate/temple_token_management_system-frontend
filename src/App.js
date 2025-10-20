@@ -9,7 +9,7 @@ function HomePage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (tokenNumber.trim()) {
-      window.location.href = `/token/${tokenNumber}`;
+      window.location.hash = `#/token/${tokenNumber}`;
     }
   };
 
