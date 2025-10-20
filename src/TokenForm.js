@@ -8,16 +8,16 @@ const TokenForm = () => {
   const [loading, setLoading] = useState(true);
   const [submitted, setSubmitted] = useState(false);
 
-  useEffect(() => {
-    fetchTokenData();
-  }, [tokenNumber]);
-
   const fetchTokenData = async () => {
+    console.log('Fetching token:', tokenNumber);
     try {
       const response = await fetch(`https://temple-token-management-system.onrender.com/api/tokens/${tokenNumber}`);
+      console.log('Response status:', response.status);
+      
       if (!response.ok) throw new Error('Token not found');
       
       const data = await response.json();
+      console.log('Token data:', data);
       
       if (data.passengers && data.passengers.length > 0) {
         setTokenData({ ...data, alreadyFilled: true });
@@ -30,10 +30,17 @@ const TokenForm = () => {
         name: '', phone: '', city: ''
       })));
     } catch (error) {
+      console.error('Error fetching token:', error);
       setTokenData({ error: 'Token not found' });
     }
     setLoading(false);
   };
+
+  useEffect(() => {
+    if (tokenNumber) {
+      fetchTokenData();
+    }
+  }, [tokenNumber]);
 
   const handlePassengerChange = (index, field, value) => {
     const updated = [...passengers];
@@ -58,8 +65,10 @@ const TokenForm = () => {
     setLoading(false);
   };
 
-  if (loading) return <div className="container">Loading...</div>;
-  if (tokenData?.error) return <div className="container">Token not found</div>;
+  console.log('Current state:', { tokenNumber, tokenData, loading, passengers });
+
+  if (loading) return <div className="container">Loading token {tokenNumber}...</div>;
+  if (tokenData?.error) return <div className="container">Token {tokenNumber} not found</div>;
   
   if (submitted) {
     return (
@@ -88,9 +97,9 @@ const TokenForm = () => {
     <div className="container">
       <h1>Temple Darshan</h1>
       <div className="form-section">
-        <h2>Token: {tokenData.token_number}</h2>
-        <p>Vehicle: {tokenData.vehicle_number}</p>
-        <p>Visitors: {tokenData.passenger_count}</p>
+        <h2>Token: {tokenData?.token_number}</h2>
+        <p>Vehicle: {tokenData?.vehicle_number}</p>
+        <p>Visitors: {tokenData?.passenger_count}</p>
         
         {passengers.map((passenger, index) => (
           <div key={index} className="passenger-form">
