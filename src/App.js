@@ -9,10 +9,19 @@ function App() {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    // Check URL hash for token
+    // Check URL hash for token - handle both formats
     const hash = window.location.hash;
-    if (hash.includes('token=')) {
-      const token = hash.split('token=')[1];
+    let token = null;
+    
+    if (hash.includes('/token/')) {
+      // Format: #/token/TOKEN_NUMBER
+      token = hash.split('/token/')[1];
+    } else if (hash.includes('token=')) {
+      // Format: #token=TOKEN_NUMBER
+      token = hash.split('token=')[1];
+    }
+    
+    if (token) {
       setTokenNumber(token);
       fetchToken(token);
     }
