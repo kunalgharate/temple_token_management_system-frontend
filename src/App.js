@@ -12,14 +12,14 @@ import { LanguageProvider } from './hooks/useLanguage';
 import TokenForm from './TokenForm';
 
 // Import pages
-import About from './pages/About';
-import Services from './pages/Services';
-import Gallery from './pages/Gallery';
-import Contact from './pages/Contact';
-import Trustees from './pages/Trustees';
-import Employees from './pages/Employees';
-import Donations from './pages/Donations';
-import PujaBooking from './pages/PujaBooking';
+import About from './pages/About.jsx';
+import Services from './pages/Services.jsx';
+import Gallery from './pages/Gallery.jsx';
+import Contact from './pages/Contact.jsx';
+import Trustees from './pages/Trustees.jsx';
+import Employees from './pages/Employees.jsx';
+import Donations from './pages/Donations.jsx';
+import PujaBooking from './pages/PujaBooking.jsx';
 
 const HomePage = () => {
   return (
