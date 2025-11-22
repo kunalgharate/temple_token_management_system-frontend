@@ -1,0 +1,46 @@
+{
+  "banners": [
+    {
+      "id": 1,
+      "image": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&h=500&fit=crop",
+      "title": "शिव अर्ध: नरेश्वरी नाग ज्योर्तीलिंग धाम",
+      "subtitle": "Divine Blessings Await You",
+      "link": "/about"
+    },
+    {
+      "id": 2,
+      "image": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&h=500&fit=crop",
+      "title": "Daily Aarti & Prayers",
+      "subtitle": "Join us for morning and evening prayers",
+      "link": "/services"
+    },
+    {
+      "id": 3,
+      "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&h=500&fit=crop",
+      "title": "Festival Celebrations",
+      "subtitle": "Experience divine festivals throughout the year",
+      "link": "/services"
+    },
+    {
+      "id": 4,
+      "image": "https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=1200&h=500&fit=crop",
+      "title": "Temple Services",
+      "subtitle": "Complete spiritual services for devotees",
+      "link": "/services"
+    },
+    {
+      "id": 5,
+      "image": "https://images.unsplash.com/photo-1590736969955-71cc94901144?w=1200&h=500&fit=crop",
+      "title": "Virtual Darshan",
+      "subtitle": "Experience divine presence online",
+      "link": "/gallery"
+    },
+    {
+      "id": 6,
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=500&fit=crop",
+      "title": "Latest News & Updates",
+      "subtitle": "Stay updated with temple activities",
+      "link": "/contact"
+    }
+  ]
+}

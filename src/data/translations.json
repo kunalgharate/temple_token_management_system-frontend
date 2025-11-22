@@ -1,0 +1,68 @@
+{
+  "en": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "gallery": "Gallery",
+      "events": "Events",
+      "contact": "Contact"
+    },
+    "hero": {
+      "title": "Welcome to Mahakaleshwar Temple",
+      "subtitle": "Experience Divine Blessings",
+      "cta": "Plan Your Visit"
+    },
+    "common": {
+      "loading": "Loading...",
+      "viewMore": "View More",
+      "close": "Close",
+      "next": "Next",
+      "previous": "Previous"
+    }
+  },
+  "hi": {
+    "nav": {
+      "home": "मुख्य",
+      "about": "परिचय",
+      "services": "सेवाएं",
+      "gallery": "गैलरी",
+      "events": "कार्यक्रम",
+      "contact": "संपर्क"
+    },
+    "hero": {
+      "title": "महाकालेश्वर मंदिर में आपका स्वागत है",
+      "subtitle": "दिव्य आशीर्वाद का अनुभव करें",
+      "cta": "अपनी यात्रा की योजना बनाएं"
+    },
+    "common": {
+      "loading": "लोड हो रहा है...",
+      "viewMore": "और देखें",
+      "close": "बंद करें",
+      "next": "अगला",
+      "previous": "पिछला"
+    }
+  },
+  "mr": {
+    "nav": {
+      "home": "मुख्यपृष्ठ",
+      "about": "परिचय",
+      "services": "सेवा",
+      "gallery": "चित्रशाला",
+      "events": "कार्यक्रम",
+      "contact": "संपर्क"
+    },
+    "hero": {
+      "title": "महाकालेश्वर मंदिरात आपले स्वागत आहे",
+      "subtitle": "दिव्य आशीर्वादाचा अनुभव घ्या",
+      "cta": "तुमच्या भेटीची योजना करा"
+    },
+    "common": {
+      "loading": "लोड होत आहे...",
+      "viewMore": "अधिक पहा",
+      "close": "बंद करा",
+      "next": "पुढे",
+      "previous": "मागे"
+    }
+  }
+}

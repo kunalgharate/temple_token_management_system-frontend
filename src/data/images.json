@@ -1,0 +1,76 @@
+{
+  "hero": [
+    {
+      "id": "hero-1",
+      "src": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1920&h=1080&fit=crop",
+      "alt": "Mahakaleshwar Temple Main View",
+      "title": "श्री महाकालेश्वर ज्योतिर्लिंग"
+    }
+  ],
+  "gallery": [
+    {
+      "id": "gallery-1",
+      "src": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop",
+      "alt": "Temple Main Structure",
+      "category": "exterior",
+      "title": "Main Temple",
+      "description": "The magnificent main structure of Mahakaleshwar Temple"
+    },
+    {
+      "id": "gallery-2",
+      "src": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&h=600&fit=crop",
+      "alt": "Temple Interior",
+      "category": "interior",
+      "title": "Sanctum Sanctorum",
+      "description": "Sacred inner chamber where the Jyotirlinga resides"
+    },
+    {
+      "id": "gallery-3",
+      "src": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop",
+      "alt": "Evening Aarti",
+      "category": "rituals",
+      "title": "Evening Aarti",
+      "description": "Divine evening prayers with oil lamps"
+    },
+    {
+      "id": "gallery-4",
+      "src": "https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=800&h=600&fit=crop",
+      "alt": "Festival Celebration",
+      "category": "festivals",
+      "title": "Mahashivratri",
+      "description": "Grand celebration during Mahashivratri festival"
+    },
+    {
+      "id": "gallery-5",
+      "src": "https://images.unsplash.com/photo-1590736969955-71cc94901144?w=800&h=600&fit=crop",
+      "alt": "Temple Architecture",
+      "category": "exterior",
+      "title": "Architectural Details",
+      "description": "Intricate carvings and architectural elements"
+    },
+    {
+      "id": "gallery-6",
+      "src": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop",
+      "alt": "Devotees Praying",
+      "category": "devotion",
+      "title": "Devotees",
+      "description": "Devotees offering prayers at the temple"
+    },
+    {
+      "id": "gallery-7",
+      "src": "https://images.unsplash.com/photo-1605379399642-870262d3d051?w=800&h=600&fit=crop",
+      "alt": "Temple Bells",
+      "category": "interior",
+      "title": "Sacred Bells",
+      "description": "Traditional temple bells creating divine atmosphere"
+    },
+    {
+      "id": "gallery-8",
+      "src": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=800&h=600&fit=crop",
+      "alt": "Temple at Night",
+      "category": "exterior",
+      "title": "Night View",
+      "description": "Temple illuminated beautifully at night"
+    }
+  ]
+}

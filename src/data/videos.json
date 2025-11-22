@@ -1,0 +1,85 @@
+{
+  "featured": [
+    {
+      "id": "featured-1",
+      "youtubeId": "dQw4w9WgXcQ",
+      "title": "Mahakaleshwar Temple Virtual Tour",
+      "description": "Complete virtual darshan of the sacred temple",
+      "thumbnail": "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+      "duration": "15:30",
+      "category": "tour"
+    },
+    {
+      "id": "featured-2",
+      "youtubeId": "9bZkp7q19f0",
+      "title": "Morning Aarti Live",
+      "description": "Experience the divine morning prayers",
+      "thumbnail": "https://img.youtube.com/vi/9bZkp7q19f0/maxresdefault.jpg",
+      "duration": "8:45",
+      "category": "aarti"
+    },
+    {
+      "id": "featured-3",
+      "youtubeId": "JGwWNGJdvx8",
+      "title": "Temple History Documentary",
+      "description": "Learn about the ancient history and significance",
+      "thumbnail": "https://img.youtube.com/vi/JGwWNGJdvx8/maxresdefault.jpg",
+      "duration": "25:15",
+      "category": "history"
+    }
+  ],
+  "aarti": [
+    {
+      "id": "aarti-1",
+      "youtubeId": "dQw4w9WgXcQ",
+      "title": "Morning Aarti",
+      "description": "Daily morning prayers at 5:00 AM",
+      "thumbnail": "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+      "duration": "8:45",
+      "category": "aarti",
+      "time": "5:00 AM"
+    },
+    {
+      "id": "aarti-2",
+      "youtubeId": "9bZkp7q19f0",
+      "title": "Evening Aarti",
+      "description": "Divine evening prayers at 7:00 PM",
+      "thumbnail": "https://img.youtube.com/vi/9bZkp7q19f0/maxresdefault.jpg",
+      "duration": "12:20",
+      "category": "aarti",
+      "time": "7:00 PM"
+    },
+    {
+      "id": "aarti-3",
+      "youtubeId": "JGwWNGJdvx8",
+      "title": "Bhasma Aarti",
+      "description": "Special aarti with sacred ash",
+      "thumbnail": "https://img.youtube.com/vi/JGwWNGJdvx8/maxresdefault.jpg",
+      "duration": "10:30",
+      "category": "aarti",
+      "time": "4:00 AM"
+    }
+  ],
+  "festivals": [
+    {
+      "id": "festival-1",
+      "youtubeId": "dQw4w9WgXcQ",
+      "title": "Mahashivratri Celebration 2024",
+      "description": "Grand festival celebration with special rituals",
+      "thumbnail": "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+      "duration": "45:00",
+      "category": "festival",
+      "year": "2024"
+    },
+    {
+      "id": "festival-2",
+      "youtubeId": "9bZkp7q19f0",
+      "title": "Shravan Month Special",
+      "description": "Special ceremonies during holy month of Shravan",
+      "thumbnail": "https://img.youtube.com/vi/9bZkp7q19f0/maxresdefault.jpg",
+      "duration": "30:15",
+      "category": "festival",
+      "year": "2024"
+    }
+  ]
+}
