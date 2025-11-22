@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import ImageGallery from '../components/media/ImageGallery';
-import VideoGallery from '../components/media/VideoGallery';
+import ImageGallery from '../components/media/ImageGallery.jsx';
+import VideoGallery from '../components/media/VideoGallery.jsx';
 
 const Gallery = () => {
   const [activeTab, setActiveTab] = useState('photos');

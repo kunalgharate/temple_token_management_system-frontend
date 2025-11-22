@@ -6,8 +6,8 @@ import Header from './components/common/Header';
 import HeroBanner from './components/layout/HeroBanner';
 import BannerCarousel from './components/layout/BannerCarousel';
 import NotificationBoard from './components/layout/NotificationBoard';
-import ImageGallery from './components/media/ImageGallery';
-import VideoGallery from './components/media/VideoGallery';
+import ImageGallery from './components/media/ImageGallery.jsx';
+import VideoGallery from './components/media/VideoGallery.jsx';
 import { LanguageProvider } from './hooks/useLanguage';
 import TokenForm from './TokenForm';
 
@@ -327,6 +327,7 @@ const App = () => {
             <Route path="/token" element={<TokenForm />} />
             <Route path="/token/:tokenNumber" element={<TokenForm />} />
             <Route path="/fill-details/:tokenNumber" element={<TokenForm />} />
+            <Route path="*" element={<HomePage />} />
           </Routes>
         </div>
       </Router>
