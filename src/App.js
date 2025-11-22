@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 import Header from './components/common/Header';
@@ -326,6 +326,7 @@ const App = () => {
             <Route path="/puja-booking" element={<PujaBooking />} />
             <Route path="/token" element={<TokenForm />} />
             <Route path="/token/:tokenNumber" element={<TokenForm />} />
+            <Route path="/fill-details/:tokenNumber" element={<TokenForm />} />
           </Routes>
         </div>
       </Router>
